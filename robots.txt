@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://zhirongac1971-jpg.github.io/wang-zhirong-realestate/sitemap.xml
