@@ -1,0 +1,553 @@
+/* ==========================================================================
+   王稚羢 房產經紀個人品牌網站
+   CIS: --cthouse-primary-red #FD4128 / --cthouse-secondary-green #00584C / white
+   ========================================================================== */
+
+:root {
+  --cthouse-primary-red: #FD4128;
+  --cthouse-secondary-green: #00584C;
+  --cthouse-white: #FFFFFF;
+
+  --text-dark: #1a2420;
+  --text-muted: #5b6b66;
+  --bg-soft: #F7F5F2;
+  --border-soft: #e5e0da;
+
+  --max-width: 1120px;
+  --radius: 14px;
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: var(--text-dark);
+  background: var(--cthouse-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--cthouse-primary-red);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: var(--cthouse-secondary-green);
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+section { padding: 80px 0; }
+
+/* ---------- Top Nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--cthouse-secondary-green);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand span.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cthouse-primary-red);
+  display: inline-block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.nav-links a:hover { color: var(--cthouse-primary-red); }
+
+.nav-cta {
+  background: var(--cthouse-primary-red);
+  color: var(--cthouse-white);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.nav-cta:hover { background: #e02f18; color: var(--cthouse-white); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--cthouse-secondary-green);
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 64px 0 80px;
+  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--cthouse-white) 100%);
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 4px solid var(--cthouse-white);
+  outline: 1px solid var(--border-soft);
+  aspect-ratio: 3 / 4;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero-eyebrow {
+  color: var(--cthouse-primary-red);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--cthouse-secondary-green);
+  margin-bottom: 12px;
+}
+
+.hero h1 small {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.hero p.tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--cthouse-primary-red);
+  color: var(--cthouse-white);
+  box-shadow: 0 6px 18px rgba(253, 65, 40, 0.32);
+}
+
+.btn-primary:hover { background: #e02f18; color: var(--cthouse-white); }
+
+.btn-line {
+  background: #06C755;
+  color: var(--cthouse-white);
+  box-shadow: 0 6px 18px rgba(6, 199, 85, 0.3);
+}
+
+.btn-line:hover { background: #05a847; color: var(--cthouse-white); }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--cthouse-secondary-green);
+  color: var(--cthouse-secondary-green);
+}
+
+.btn-outline:hover { background: var(--cthouse-secondary-green); color: var(--cthouse-white); }
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.hero-meta strong { color: var(--text-dark); }
+
+/* ---------- Service Areas ---------- */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.area-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.area-card .area-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--cthouse-secondary-green);
+  color: var(--cthouse-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.area-card h3 {
+  color: var(--cthouse-secondary-green);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.area-card p { color: var(--text-muted); font-size: 0.92rem; }
+
+/* ---------- Track Record (戰績) ---------- */
+.track-record { background: var(--cthouse-secondary-green); color: var(--cthouse-white); }
+
+.track-record .section-label { color: #7fd8c5; }
+.track-record .section-title { color: var(--cthouse-white); }
+.track-record .section-sub { color: rgba(255,255,255,0.75); }
+
+.record-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.record-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+
+.record-card .record-value {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--cthouse-white);
+  margin-bottom: 6px;
+}
+
+.record-card .record-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 12px;
+}
+
+.record-card .record-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.record-note {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ---------- Services ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--cthouse-primary-red);
+}
+
+.service-card .service-num {
+  font-size: 0.85rem;
+  color: var(--cthouse-primary-red);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.service-card h3 {
+  color: var(--cthouse-secondary-green);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.service-card p { color: var(--text-muted); font-size: 0.94rem; }
+
+/* ---------- Booking / Contact ---------- */
+.booking { background: var(--bg-soft); }
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.booking-card {
+  background: var(--cthouse-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+.line-card {
+  background: linear-gradient(135deg, #06C755, #04a548);
+  color: var(--cthouse-white);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.line-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.line-card p { color: rgba(255,255,255,0.9); margin-bottom: 20px; font-size: 0.95rem; }
+
+.line-card .btn-line {
+  background: var(--cthouse-white);
+  color: #06C755;
+  box-shadow: none;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info .row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+}
+
+.contact-info .row .icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--cthouse-secondary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.contact-info .row .label { font-size: 0.8rem; color: var(--text-muted); }
+.contact-info .row .value { font-weight: 700; color: var(--text-dark); }
+
+form.booking-form { display: flex; flex-direction: column; gap: 16px; }
+
+.booking-form label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: var(--bg-soft);
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: 2px solid var(--cthouse-secondary-green);
+  outline-offset: 1px;
+  background: var(--cthouse-white);
+}
+
+.booking-form textarea { resize: vertical; min-height: 100px; }
+
+.booking-form .btn-primary {
+  width: 100%;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
+.form-status {
+  font-size: 0.88rem;
+  color: var(--cthouse-secondary-green);
+  font-weight: 700;
+  min-height: 1.2em;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #0d1f1a;
+  color: rgba(255,255,255,0.7);
+  padding: 40px 0;
+  font-size: 0.88rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+footer a:hover { color: var(--cthouse-white); }
+
+/* ---------- Floating LINE button ---------- */
+.float-line {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  background: #06C755;
+  color: var(--cthouse-white);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(6, 199, 85, 0.45);
+  font-weight: 900;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.float-line:hover { background: #05a847; color: var(--cthouse-white); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-photo { width: 200px; margin: 0 auto; }
+  .booking-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+}
+
+@media (max-width: 860px) {
+  .site-nav.open .nav-links {
+    display: flex;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--cthouse-white);
+    flex-direction: column;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-soft);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  section { padding: 56px 0; }
+  .hero { padding: 40px 0 56px; }
+}
