@@ -419,6 +419,25 @@ section { padding: 80px 0; }
   box-shadow: none;
 }
 
+.gcal-card {
+  background: linear-gradient(135deg, var(--cthouse-secondary-green), #003d34);
+  color: var(--cthouse-white);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.gcal-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.gcal-card p { color: rgba(255,255,255,0.9); margin-bottom: 20px; font-size: 0.95rem; }
+
+.btn-gcal {
+  background: var(--cthouse-white);
+  color: var(--cthouse-secondary-green);
+  box-shadow: none;
+}
+
+.btn-gcal:hover { background: var(--bg-soft); color: var(--cthouse-secondary-green); }
+
 .contact-info {
   display: flex;
   flex-direction: column;
